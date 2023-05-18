@@ -1,0 +1,353 @@
+body {
+     
+    font-family: 'Roboto Slab', serif;
+     
+  }
+  
+
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  @media (max-width: 991px) {
+    body, html {
+      overflow-y: auto;
+    }
+  }
+  
+/********************LOADING***********************/
+
+  /* Estilos para a animação do logotipo */
+  .logo-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: logoAnimation 3s forwards;
+  }
+  
+  @keyframes logoAnimation {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(3);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  .logo {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .logo.animation-fade {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  
+  
+
+  @media (max-width: 576px) {
+    .bg-video-large {
+      display: none;
+    }
+  }
+  
+/*************************** NAV  *********************/
+  .navbar-brand img {
+    max-height: 5rem; /* set max height to 50px */
+    max-width: 100%; /* set max width to fill available space */
+  }
+
+
+  
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      justify-content: center;
+    }
+    
+    .navbar-nav {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+  
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #333;
+  }
+  
+  .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* Classe adicional para adicionar espaçamento lateral */
+  .navbar-nav .nav-link {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+  
+  
+  
+
+  
+
+
+
+  /* Estilo para a animação de transição */
+  .page-transition {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+/**************************** BG*************/
+
+  @media (max-width: 576px) {
+
+  .grid {
+    
+    opacity: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 576px) {
+  .grid {
+    opacity: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+  }
+}
+
+/* Background video on mobile */
+@media (max-width: 576px) {
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+/* Background video on large */
+@media (min-width: 576px) {
+  .bg-video-large {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .bg-video {
+    display: none;
+  }
+}
+/*****************index styles***********************/
+
+#typing-text::after {
+  content: '|';
+  animation: cursorBlink 0.8s infinite;
+  }
+  
+#typing-text {
+  font-weight:bold;
+}
+
+@keyframes cursorBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.main-container p {
+  font-weight: 400;
+}
+.main-container h1 {
+  font-weight: 200;
+}
+
+
+.text-black::before,
+.text-black::after {
+  content: "";
+  display: inline-block;
+  width: 5vw;
+  height: 1px;
+  background-color: black;
+  vertical-align: middle;
+}
+
+.text-black::before {
+  margin-right: 15px; /* ajuste a margem conforme necessário */
+}
+
+.text-black::after {
+  margin-left: 15px; /* ajuste a margem conforme necessário */
+}
+/*****************IMAGES***********************/
+.img-portrait {
+  max-width: 30%;
+  border-radius: 50% ;
+}
+
+
+
+
+.image-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-link img {
+  display: block;
+  transition: all 0.3s ease-out;
+}
+
+.image-link:hover img {
+  transform: scale(1.2);
+}
+
+.image-text {
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0;
+  transition: letter-spacing 0.2s ease-in-out;
+}
+
+.image-link:hover .image-text {
+  letter-spacing: 10px;
+}
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image-link:hover .image-overlay {
+  opacity: 0.7;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  z-index: 2;
+}
+/******************Portraits*******************/
+
+
+
+/****************FOOTER*************/
+
+
+.footer {
+  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/************************TRANSIÇÃO**************/
+
+.page-transition {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/*************************ALBUMS******************************/
+
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fullscreen-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 60px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 99999;
+}
